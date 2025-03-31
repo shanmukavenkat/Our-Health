@@ -1,32 +1,22 @@
+import { SignedIn, SignedOut } from "@clerk/clerk-react";
+import SignInPage from "@/components/SignInPage";
 
-import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { LanguageProvider } from "./contexts/LanguageContext";
-import Index from "./pages/Index";
-import PredictDisease from "./pages/PredictDisease";
-import NotFound from "./pages/NotFound";
+import Dashboard from "@/components/Dashboard";
 
-const queryClient = new QueryClient();
-
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <LanguageProvider>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/predict" element={<PredictDisease />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </BrowserRouter>
-      </TooltipProvider>
-    </LanguageProvider>
-  </QueryClientProvider>
-);
+function App() {
+  return (
+   <>
+   
+            <SignedOut>
+                <SignInPage />
+            </SignedOut>
+            <SignedIn>
+      
+                <Dashboard/>
+            </SignedIn>
+        
+   </>
+  );
+}
 
 export default App;
