@@ -5,7 +5,7 @@ const Header = () => {
     const { user } = useUser();
     
     return (
-        <header className="bg-blue-400 text-black p-4 flex justify-between items-center shadow-md">
+        <header className="bg-blue-400/25 text-black p-4 flex justify-between items-center shadow-md">
     <div className="flex items-center gap-4">
         <UserButton
             appearance={{

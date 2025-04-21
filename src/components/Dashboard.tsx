@@ -7,9 +7,10 @@ const Dashboard = () => {
             <Header/>
             <UserDetails/>
             
-           <div className="m-3">
+           <div className=" pb-10">
            <Displayscomponent/>
            </div>
+
         </div>
     )
 }
